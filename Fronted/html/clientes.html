@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="tablas.css/tabla.css">
+    <title>Clientes</title>
+</head>
+<body>
+    
+    <div class="container">
+        <button class="btn-primary1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="liquid"></span>  
+            <span class="btn-txt">Modal</span>
+        </button>
+
+        <legend>Clientes</legend>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Nombre</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="text" class="form-control" name="Nombre" id="nombre_cliente" required placeholder="Ingrese sus Nombres">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Apellido</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Apellido" id="apellido_id" required placeholder="Ingrese sus Apellidos">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Tipo de Identificación</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="text" class="form-control" name="TipoDocumento" id="tipo_documento" required placeholder="Ingresar tu tipo de documento">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Identificación</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" class="form-control" name="Identificacion" id="identificacion_id" required placeholder="Ingresa su número de documento">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Teléfono</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Telefono" id="telefono_id" required placeholder="Ingresa número de Teléfono">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Dirección</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Direccion" id="direccion_id" required placeholder="Ingresa tu dirección">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Ciudad</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Ciudad" id="ciudad_id" required placeholder="Ingrese ciudad">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Estado</label>
+            <div class="col-ms-10">
+                <select class="form-control" id="Estado">
+                    <option selected>--Seleccione Estado--</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" name="btnClosed" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearData()">Cerrar</button>
+            <button name="btnAgregar" class="btn btn-primary" type="button" onclick="save()" data-bs-dismiss="modal">Agregar</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Tipo de identificación</th>
+                    <th>Identificación</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Ciudad</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="resulData"></tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../js/clientes.js"></script>
+    <script>
+        loadData();
+        clearData();
+    </script>
+</body>
+</html>

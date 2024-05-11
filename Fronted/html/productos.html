@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tablas.css/tabla.css">
+    <title>Productos</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn-primary1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="liquid"></span>  
+            <span class="btn-txt">Modal</span>
+        </button>
+
+        <legend>Productos</legend>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Nombre</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="text" class="form-control" name="Nombre" id="nombre_producto" required placeholder="Ingrese el Nombre de el producto">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Descripcion</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Descripcion" id="descripcion_id" required placeholder="Ingrese la descripcion">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Cantidad</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="text" class="form-control" name="Cantidad" id="cantidad_id" required placeholder="Ingresar la cantidad de los productos">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Precio Decimal</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" class="form-control" name="Precio_Decimal" id="precio_decimal_id" required placeholder="Ingresa el precio decimal">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Porcentaje de iva</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Porcentaje" id="porcentaje_iva_id" required placeholder="Ingrese el porcentaje de iva">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Descuento</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Descuento" id="descuento_id" required placeholder="Ingresa el descuento">
+            </div>
+        </div>
+
+        
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Estado</label>
+            <div class="col-ms-10">
+                <select class="form-control" id="Estado">
+                    <option selected>--Seleccione Estado--</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" name="btnClosed" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearData()">Cerrar</button>
+            <button name="btnAgregar" class="btn btn-primary" type="button" onclick="save()" data-bs-dismiss="modal">Agregar</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre_producto</th>
+                    <th>Descripcion</th>
+                   <th>Cantidad</th>
+                   <th>Precio Decimal</th>
+                   <th>Porcentaje iva</th>
+                   <th>Porcentaje_descuento</th>
+                   <th>Estado</th>
+
+
+                </tr>
+            </thead>
+            <tbody id="resulData"></tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../js/productos.js"></script>
+    <script>
+        loadData();
+        clearData();
+    </script>
+</body>
+</html>

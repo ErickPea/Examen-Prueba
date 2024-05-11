@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tablas.css/tabla.css">
+    <title>Descripcion de ventas </title>
+</head>
+<body>
+    
+    <div class="container">
+        <button class="btn-primary1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="liquid"></span>  
+            <span class="btn-txt">Modal</span>
+        </button>
+
+        <legend>Ventas</legend>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Cliente</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="text" class="form-control" name="Cliente" id="cliente_id" required placeholder="Ingrese Ingresa Datos">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Total</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id">
+                <input type="text" name="Total" id="total_id" required placeholder="Ingrese Datos">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-ms-2">Fecha de Venta</label>
+            <div class="col-ms-10">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="text" class="form-control" name="Fecha_venta" id="fecha_venta_id" required placeholder="Ingresar tu datos">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-ms-2">Estado</label>
+            <div class="col-ms-10">
+                <select class="form-control" id="Estado">
+                    <option selected>--Seleccione Estado--</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" name="btnClosed" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearData()">Cerrar</button>
+            <button name="btnAgregar" class="btn btn-primary" type="button" onclick="save()" data-bs-dismiss="modal">Agregar</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Clientes</th>
+                    <th>Total</th>
+                    <th>Fecha de Ventas</th>
+                    <th>Estado</th>
+        
+                   
+                </tr>
+            </thead>
+            <tbody id="resulData"></tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="../js/ventas.js"></script>
+    <script>
+        loadData();
+        clearData();
+    </script>
+</body>
+</html>
